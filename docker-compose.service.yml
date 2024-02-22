@@ -1,0 +1,18 @@
+version: '3'
+services:
+  oj-code-sandbox:
+    container_name: oj-code-sandbox
+    build:
+      context: /code/oj-code-sandbox  # 这里指定了正确的相对路径
+      dockerfile: Dockerfile
+    ports:
+      - "8100:8100"
+    networks:
+      - mynetwork
+    environment:
+      - HOST_IP=124.71.40.42
+
+
+# 网络，不定义的话就是默认网络
+networks:
+  mynetwork:
